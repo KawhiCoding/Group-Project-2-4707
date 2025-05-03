@@ -1,9 +1,11 @@
 CREATE TABLE Order_Book (
     BookID INT,
     OrderID INT,
-    Quantity INT,
-    PricePerOrder DECIMAL(10,2),
+    Quantity INT NOT NULL,
+    PricePerOrder DECIMAL(10,2) NOT NULL,
     PRIMARY KEY (BookID, OrderID),
-    FOREIGN KEY (BookID) REFERENCES Book(BookID),
+    FOREIGN KEY (BookID) REFERENCES Book(BookID)
+        ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (OrderID) REFERENCES `Order`(OrderID)
+        ON DELETE CASCADE ON UPDATE CASCADE
 );

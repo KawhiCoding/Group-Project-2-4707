@@ -1,4 +1,4 @@
 CREATE TABLE Manager (
     ManagerID INT PRIMARY KEY,
-    Department VARCHAR(50)
+    Department VARCHAR(50) NOT NULL
 );

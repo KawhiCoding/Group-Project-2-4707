@@ -2,6 +2,8 @@ CREATE TABLE Is_Paid_By (
     OrderID INT,
     PaymentID INT,
     PRIMARY KEY (OrderID, PaymentID),
-    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
-    FOREIGN KEY (PaymentID) REFERENCES Payments(PaymentID)
+    FOREIGN KEY (OrderID) REFERENCES `Order`(OrderID)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (PaymentID) REFERENCES Payment(PaymentID)
+        ON DELETE CASCADE ON UPDATE CASCADE
 );

@@ -2,6 +2,8 @@ CREATE TABLE Is_Supplied_By (
     BookID INT,
     SupplierID INT,
     PRIMARY KEY (BookID, SupplierID),
-    FOREIGN KEY (BookID) REFERENCES Books(BookID),
-    FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID)
+    FOREIGN KEY (BookID) REFERENCES Book(BookID)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID)
+        ON DELETE CASCADE ON UPDATE CASCADE
 );

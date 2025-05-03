@@ -1,13 +1,9 @@
-CREATE TABLE Book_Supplier (
+CREATE TABLE Contain_Order (
     BookID INT,
-    SupplierID INT,
     OrderID INT,
-    SupplyDate DATE,
-    PRIMARY KEY (BookID, SupplierID),
+    PRIMARY KEY (BookID, OrderID),
     FOREIGN KEY (BookID) REFERENCES Book(BookID)
-        ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (OrderID) REFERENCES `Order`(OrderID)
         ON DELETE CASCADE ON UPDATE CASCADE
-);
+); 

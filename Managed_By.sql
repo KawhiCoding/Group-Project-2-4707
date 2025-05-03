@@ -1,6 +1,8 @@
 CREATE TABLE Managed_By (
     EmployeeID INT PRIMARY KEY,
     ManagerID INT,
-    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),
-    FOREIGN KEY (ManagerID) REFERENCES Managers(ManagerID)
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (ManagerID) REFERENCES Manager(ManagerID)
+        ON DELETE CASCADE ON UPDATE CASCADE
 );
